@@ -74,6 +74,6 @@ task normal(type: Test) {
 
 task any(type: Test) {
     useJUnitPlatform {
-        includeTags("normal")
+        includeTags("any")
     }
 }
