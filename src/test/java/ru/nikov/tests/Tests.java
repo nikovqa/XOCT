@@ -5,17 +5,21 @@ import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import ru.nikov.pages.ContactsPage;
 import ru.nikov.pages.MainPage;
 
+import static com.codeborne.selenide.Selenide.open;
 
-public class MainPageTests extends TestBase {
+
+public class Tests extends TestBase {
 
     MainPage mainPage = new MainPage();
+    ContactsPage contactsPage = new ContactsPage();
 
 
-    @Tag ("critical")
+    @Tag ("normal")
     @DisplayName("Проверка содержимого хэдер меню")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.NORMAL)
     @Test
     void headerMenuContentTest() {
         mainPage.openPage()
@@ -23,7 +27,7 @@ public class MainPageTests extends TestBase {
     }
 
     @Tag ("critical")
-    @DisplayName("Проверка наличия формы запроса консультации")
+    @DisplayName("Проверка наличия формы запроса консультации на главной странице")
     @Severity(SeverityLevel.CRITICAL)
     @Test
     void requestFormTest() {
@@ -31,5 +35,43 @@ public class MainPageTests extends TestBase {
                 .isRequestFormExist();
     }
 
+    @Tag ("critical")
+    @DisplayName("Проверка контактной информации")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test
+    void contactsTest() {
+        contactsPage.openPage().checkEkbContacts();
+        contactsPage.openPage().checkKurganContacts();
+    }
+
+    @Tag ("normal")
+    @DisplayName("Проверка наличия формы подписки на главной странице")
+    @Severity(SeverityLevel.NORMAL)
+    @Test
+    void subscribeFormTest() {
+        mainPage.openPage()
+                .subscribeButtonClick()
+                .verifySubscribeForm();
+    }
+
+    @Tag ("critical")
+    @DisplayName("Проверка бесплатного номера в хедере главной страницы")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test
+    void freeCallNumberTest() {
+        mainPage.openPage()
+                .checkFreeCallNumber();
+    }
+
+
+    @Tag ("normal")
+    @DisplayName("Проверка информации в разделе 'О компании'")
+    @Severity(SeverityLevel.NORMAL)
+    @Test
+    void aboutUsPageTest() {
+        mainPage.openPage()
+                .viewInfoAboutUs()
+                .checkInfoAboutUs();
+    }
 }
 

@@ -1,7 +1,7 @@
 {
   "base": {
     "logo": "",
-    "project": "RCTests",
+    "project": "XOCT",
     "environment": "qa.guru",
     "comment": "Tests report, @nikov108",
     "reportLink": "allure",

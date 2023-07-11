@@ -5,7 +5,7 @@ import com.codeborne.selenide.Condition;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
-public class ContentVerifyModal {
+public class ContentVerify {
 
     public void verifyHeaderMenuContent() {
         $("div",2 ).shouldHave(Condition.text("Карьера"), Condition.text("Пресс центр"),
@@ -30,14 +30,17 @@ public class ContentVerifyModal {
     }
 
     public void verifySubscribeForm() {
-        $("#modal-header").shouldHave(Condition.text("Подписка"));
+        $(byText("Подписка")).shouldHave(Condition.text( "Подписка" ));
     }
 
-    public void verifyLanguageContentResult(String expectedResult) {
-        $(".header_installsteam_btn_content").shouldHave(Condition.text(expectedResult));
+    public void verifyFreeCallNumber() {
+        $(".header_phone").shouldHave(Condition.text("8-800-511-54-60"));
     }
 
-    public void verifyGameRemoveFromCart() {
-        $(".cart_status_message").shouldHave(Condition.text("Your item has been removed!"));
+    public void verifyInfoAboutUs() {
+        $(".banner-type-1").shouldHave(Condition.text("Группа Компаний ХОСТ – федеральный системный интегратор," +
+                                                                  " работает на рынке с 1993 года. Входит в ТОП-100 крупнейших" +
+                                                                  " ИТ-компаний России по данным ранкинга TAdviser."
+        ));
     }
 }
