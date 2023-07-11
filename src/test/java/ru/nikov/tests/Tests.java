@@ -10,7 +10,7 @@ import ru.nikov.pages.MainPage;
 
 import static com.codeborne.selenide.Selenide.open;
 
-
+@Tag( "any" )
 public class Tests extends TestBase {
 
     MainPage mainPage = new MainPage();
