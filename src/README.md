@@ -1,7 +1,7 @@
 
 <h1 >Проект автоматизации тестирования UI для сайта <a href="https://hostco.ru/">XOCT</a></h1>
 
-![Steam_logo.svg.png](media/screenshots/project.png)
+![XOCT](media/screenshots/project.png)
 
 ## :bookmark_tabs: Содержание
 
