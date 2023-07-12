@@ -65,7 +65,7 @@ gradle clean test
 ### Удаленный запуск тестов
 
 ```
-gradle clean test 
+gradle clean
 ${TASK}
 "-Dbrowser=${BROWSER}" 
 "-DbrowserVersion=${BROWSER_VERSION}" 
@@ -73,7 +73,7 @@ ${TASK}
 "-DremoteUrl=${REMOTE_URL}"
 
 ```
-> `${TASK}` - запуск тестов с учетом _severity_  _<code>normal</code>_, _<code>critical</code>_, _<code>any</code>_
+> `${TASK}` - запуск тестов с учетом _severity_  _<code>normal</code>_, _<code>critical</code>_, _<code>test</code>_
 > 
 > `${BROWSER}` - наименование браузера (_по умолчанию - <code>chrome</code>_).
 >
