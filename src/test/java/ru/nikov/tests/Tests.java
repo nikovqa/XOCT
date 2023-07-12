@@ -55,7 +55,7 @@ public class Tests extends TestBase {
     }
 
     @Tag ("critical")
-    @DisplayName("Проверка бесплатного номера в хедере главной страницы")
+    @DisplayName("Проверка бесплатного номера в хедере")
     @Severity(SeverityLevel.CRITICAL)
     @Test
     void freeCallNumberTest() {
